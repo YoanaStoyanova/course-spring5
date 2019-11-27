@@ -39,7 +39,7 @@ public class CommentServiceImpl implements CommentService {
    public Comment delete(String commentId) {
       Optional<Comment> old = repo.findById(commentId);
       if (!old.isPresent()) {
-         throw new IllegalArgumentException("Faile to delete comment. Invalid id " + commentId);
+         throw new IllegalArgumentException("Failed to delete comment. Invalid id " + commentId);
       }
       repo.deleteById(commentId);
       return old.get();
